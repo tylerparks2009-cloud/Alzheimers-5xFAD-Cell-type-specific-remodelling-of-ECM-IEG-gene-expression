@@ -1,0 +1,33 @@
+# Requirements for the dataset-to-figures pipeline (scripts 01-13)
+#
+# Version numbers are NOT pinned here, since the original environment's
+# exact versions were never recorded -- this is a known reproducibility
+# caveat (see 00_README.md and the paper's Limitations section). Installing
+# current versions of these packages is the best available option, but is
+# not guaranteed to reproduce identical numerical results to the original
+# run, particularly for anything touching Harmony integration, PCA, or
+# clustering.
+
+scanpy
+pandas
+numpy
+seaborn
+matplotlib
+scipy
+statsmodels
+mygene
+harmonypy
+anndata
+requests
+
+# Allen Institute's ABC Atlas access package -- not on PyPI, installs from
+# GitHub directly:
+# pip install "abc_atlas_access[notebooks] @ git+https://github.com/alleninstitute/abc_atlas_access.git"
+
+# pysoupx and pydecontx (used only in script 01, for DecontX ambient RNA
+# removal): these are NOT standard, easily pip-installable packages as far
+# as could be verified. Install these however they were originally
+# installed in your working environment (e.g. a specific wheel, a GitHub
+# source install, or an R-via-rpy2 wrapper) -- if you don't remember, this
+# is worth tracking down before attempting script 01, since it will fail
+# at the `import pydecontx` line otherwise.
